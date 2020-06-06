@@ -6,6 +6,7 @@ const app = express()
 
 // Middleware
 app.use(cors())
+app.use(express.json())
 
 const stocks = require('./routes/api/stocks')
 
