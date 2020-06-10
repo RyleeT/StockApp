@@ -36,6 +36,12 @@ router.get('/get/industries', async (req, res) => {
   res.send(await stocks.distinct("Industry"))
 })
 
+// Get tickers
+router.get('/get/tickers', async (req, res) => {
+  const stocks = await loadStocks()
+  res.send(await stocks.distinct("Ticker"))
+})
+
 // Create stock
 router.post('/', async (req, res) => {
   const stocks = await loadStocks()
