@@ -19,15 +19,15 @@ router.get('/:ticker', async (req, res) => {
 // Get top 10 stocks of the day
 router.get('/top/overall', async (req, res) => {
   const stocks = await loadStocks()
-  displayParams = {"Ticker": 1, "Performance (YTD)": 2, "EPS growth past 5 years": 3, "Price": 4, "Average Volume": 5, "_id": 0}
-  res.send(await stocks.find({}, displayParams).sort("Change from Open", -1).limit(10).toArray())
+  displayParams = {"Ticker": 1, "Price": 1, "Change from Open": 1, "Volume": 1, "52-Week High": 1, "52-Week Low": 1, "_id": 0}
+  res.send(await stocks.find({}).project(displayParams).sort("Change from Open", -1).limit(10).toArray())
 })
 
 // Get top 10 stocks of the day by industry
 router.get('/top/:industry', async (req, res) => {
   const stocks = await loadStocks()
-  displayParams = {"Ticker": 1, "Performance (YTD)": 2, "EPS growth past 5 years": 3, "Price": 4, "Average Volume": 5, "_id": 0}
-  res.send(await stocks.find({"Industry": req.params.industry}, displayParams).sort("Change from Open", -1).limit(10).toArray())
+  displayParams = {"Ticker": 1, "Price": 1, "Change from Open": 1, "Volume": 1, "52-Week High": 1, "52-Week Low": 1, "_id": 0}
+  res.send(await stocks.find({"Industry": req.params.industry}).project(displayParams).sort("Change from Open", -1).limit(10).toArray())
 })
 
 // Get industries
