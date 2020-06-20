@@ -27,7 +27,7 @@
       <!-- Header -->
       <v-col cols="12">
         <h1 class="display-2 font-weight-bold">
-          Best-Performing Stocks of the Day
+          Top Stocks of the Day
         </h1>
       </v-col>
     

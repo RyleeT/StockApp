@@ -14,7 +14,7 @@
             contain
             src="./assets/stocks-logo.png"
             transition="scale-transition"
-            width="200"
+            height="100vh"
           />
         </router-link>
       </div>
