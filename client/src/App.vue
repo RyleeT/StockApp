@@ -3,6 +3,7 @@
     <v-app-bar
       app
       color="primary"
+      height="64"
       dark
     >
       <!-- Logo and Home Button -->
@@ -25,7 +26,6 @@
         <!-- Create Stock Button -->
         <v-btn
           to="/create"
-
           depressed
           icon
         >
@@ -129,6 +129,7 @@ export default {
       if (this.tickers.includes(ticker)) {
         this.$refs.stockRef.getStock(ticker)
         this.$refs.stockRef.stockOpen = true
+        this.$refs.searchBox.isMenuActive=false
       } else {
         this.snackbar = true
       }

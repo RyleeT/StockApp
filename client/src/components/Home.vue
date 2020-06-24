@@ -7,8 +7,8 @@
   >
     <!-- Banner -->
     <v-col
-      class="hidden-sm-and-down pa-0"
-      md="6"
+      class="hidden-md-and-down pa-0"
+      lg="6"
     >
       <v-img 
         src="../assets/stocks-banner.jpg" 
@@ -21,7 +21,8 @@
     <v-col
       class="align-content-space-between layout wrap"
       cols="12"
-      md="6"
+      lg="6"
+      md="9"
       :pa-5="$vuetify.breakpoint.smAndDown"
     >
       <!-- Header -->
