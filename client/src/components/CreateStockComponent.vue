@@ -82,20 +82,20 @@
         <v-container fluid>
           <v-row justify="center">
             <v-col
-              cols="6"
-              sm="3"
+              cols="12"
+              sm="4"
             >
               <v-combobox
                 v-model="updateKey"
                 :items="Object.keys(stocks)"
-                placeholder="Choose a field to modify"
+                placeholder="Field to modify or add"
                 hide-details
               />
             </v-col>
 
             <v-col
-              cols="6"
-              sm="3"
+              cols="12"
+              sm="4"
             >
               <v-text-field
                 v-model="updateValue"
@@ -106,7 +106,7 @@
 
             <v-col
               cols="12"
-              sm="6"
+              sm="4"
             >
               <v-btn
                 color="primary" 

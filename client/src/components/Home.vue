@@ -4,7 +4,6 @@
     align="center"
     no-gutters
   >
-
     <!-- Banner -->
     <v-col
       class="hidden-md-and-down pa-0 fill-height"
@@ -12,7 +11,7 @@
     >
       <v-img 
         src="../assets/stocks-banner.jpg" 
-        class="elevation-3 fill-height"
+        class="fill-height"
       />
     </v-col>
 
@@ -34,8 +33,7 @@
           class="mx-auto"
           width="500"
         >
-          <v-divider class="mb-1"></v-divider>
-          <v-divider></v-divider>
+          <v-divider/>
         </v-responsive>
       </v-col>
 
@@ -186,11 +184,11 @@
             >
               {{ percentFormat(item["52-Week Low"]) }}
             </span>
+
           </v-data-table>
         </v-card>
       </v-col>
     </v-col>
-
   </v-row>
 </template>
 
