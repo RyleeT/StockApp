@@ -15,7 +15,6 @@
             contain
             src="./assets/stocks-logo.png"
             transition="scale-transition"
-            height="100vh"
           />
         </router-link>
       </div>
@@ -34,6 +33,7 @@
         
         <v-divider vertical/>
 
+        <!-- Search Components -->
         <v-container>
           <!-- Search Stock Field -->
           <v-combobox
@@ -61,7 +61,6 @@
                 <v-icon>mdi-magnify</v-icon>
               </v-btn>
             </template>
-
           </v-combobox>
         </v-container>
 
@@ -70,7 +69,7 @@
 
     <!-- Main Display Area -->
     <v-content>
-      <router-view/>
+      <router-view class="fill-height"/>
       <StockComponent ref="stockRef"/>
     </v-content>
 

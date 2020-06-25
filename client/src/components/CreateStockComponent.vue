@@ -1,10 +1,16 @@
 <template>
-  <v-container>
-    <v-stepper v-model="step" vertical>
+  <v-container class="justify-center">
+    <v-stepper 
+      v-model="step" 
+      vertical 
+      class="fill-height elevation-0"
+    >
 
       <!-- Step One -->
-      <v-stepper-step :complete="step > 1" step="1">Enter your company's name</v-stepper-step>
-  
+      <v-stepper-step :complete="step > 1" step="1">
+        Enter your company's name
+      </v-stepper-step>
+
       <v-stepper-content step="1">
         <v-form v-model="nameValid">
           <v-text-field
@@ -24,8 +30,10 @@
       </v-stepper-content>
 
       <!-- Step Two -->
-      <v-stepper-step :complete="step > 2" step="2">Choose a ticker</v-stepper-step>
-  
+      <v-stepper-step :complete="step > 2" step="2">
+        Choose a ticker
+      </v-stepper-step>
+
       <v-stepper-content step="2">
         <v-form v-model="tickerValid">
           <v-text-field
@@ -47,8 +55,10 @@
       </v-stepper-content>
 
       <!-- Step Three -->
-      <v-stepper-step :complete="step > 3" step="3">Please add any available information</v-stepper-step>
-  
+      <v-stepper-step :complete="step > 3" step="3">
+        Please add any available information
+      </v-stepper-step>
+
       <v-stepper-content step="3">
         <!-- Body -->
         <v-row no-gutters>
@@ -70,56 +80,55 @@
 
         <!-- Footer -->
         <v-container fluid>
-          <v-col cols="12" class="pa-0">
-            <v-row justify="center">
-              <v-col
-                cols="6"
-                sm="3"
+          <v-row justify="center">
+            <v-col
+              cols="6"
+              sm="3"
+            >
+              <v-combobox
+                v-model="updateKey"
+                :items="Object.keys(stocks)"
+                placeholder="Choose a field to modify"
+                hide-details
+              />
+            </v-col>
+
+            <v-col
+              cols="6"
+              sm="3"
+            >
+              <v-text-field
+                v-model="updateValue"
+                placeholder="Choose a value"
+                hide-details
+              />
+            </v-col>
+
+            <v-col
+              cols="12"
+              sm="6"
+            >
+              <v-btn
+                color="primary" 
+                @click="setValue(updateKey, updateValue)"
+                height="56"
+                width="95"
+                tile
               >
-                <v-combobox
-                  v-model="updateKey"
-                  :items="Object.keys(stocks)"
-                  placeholder="Choose a field to modify"
-                  hide-details
-                />
-              </v-col>
-    
-              <v-col
-                cols="6"
-                sm="3"
+                Update
+              </v-btn>
+
+              <v-btn 
+                color="primary" 
+                @click="deleteValue(updateKey, updateValue)"
+                height="56"
+                width="95"
+                tile
               >
-                <v-text-field
-                  v-model="updateValue"
-                  placeholder="Choose a value"
-                  hide-details
-                />
-              </v-col>
-
-              <v-col
-                cols="6"
-
-              >
-
-                <v-btn
-                  color="primary" 
-                  @click="setValue(updateKey, updateValue)"
-                  height="56"
-                  tile
-                >
-                  Update
-                </v-btn>
-
-                <v-btn 
-                  color="primary" 
-                  @click="deleteValue(updateKey, updateValue)"
-                  height="56"
-                  tile
-                >
-                  Delete
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-col>
+                Delete
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-container>
 
         <v-btn color="primary" @click="step = 4, createStock(stocks)">Finish</v-btn>
@@ -127,7 +136,9 @@
       </v-stepper-content>
 
       <!-- Step Four -->
-      <v-stepper-step :complete="step >4" step="4">Confirmation</v-stepper-step>
+      <v-stepper-step :complete="step >4" step="4">
+        Confirmation
+      </v-stepper-step>
 
       <v-stepper-content step="4">
         <v-alert
@@ -173,14 +184,6 @@ export default {
       v => v.length <= 4 || 'Ticker 4 or fewer characters',
     ]
   }),
-
-  async created() {
-    /*try {
-      this.stocks = await StockService.getStocks()
-    } catch (err) {
-      this.error = err.message
-    }*/
-  },
   
   methods: {
     async createStock() {

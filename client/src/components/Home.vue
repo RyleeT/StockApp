@@ -1,43 +1,50 @@
 <template>
-  <v-row 
-    class="text-center" 
-    justify="center" 
-    align="center" 
+  <v-row
+    justify="center"
+    align="center"
     no-gutters
   >
+
     <!-- Banner -->
     <v-col
-      class="hidden-md-and-down pa-0"
+      class="hidden-md-and-down pa-0 fill-height"
       lg="6"
     >
       <v-img 
         src="../assets/stocks-banner.jpg" 
-        height="94vh"
-        class="elevation-3"
+        class="elevation-3 fill-height"
       />
     </v-col>
 
     <!-- Main Content -->
     <v-col
-      class="align-content-space-between layout wrap"
       cols="12"
       lg="6"
       md="9"
-      :pa-5="$vuetify.breakpoint.smAndDown"
     >
       <!-- Header -->
       <v-col cols="12">
-        <h1 class="display-2 font-weight-bold">
+        <h1 class="display-2 font-weight-bold text-center">
           Top Stocks of the Day
         </h1>
       </v-col>
     
+      <v-col>
+        <v-responsive
+          class="mx-auto"
+          width="500"
+        >
+          <v-divider class="mb-1"></v-divider>
+          <v-divider></v-divider>
+        </v-responsive>
+      </v-col>
+
       <!-- Best-Performing Stocks of the Day -->
       <v-col
         class="mb-5"
         cols="12"
       >
-        <v-card>
+        <v-card elevation="0">
           <v-card-title class="headline font-weight-bold">
             Overall
           </v-card-title>
@@ -49,7 +56,7 @@
             dense
           >
             <!-- Ticker Formatting -->
-            <span 
+            <span
               slot="item.Ticker" 
               slot-scope="{ item }"
             >
@@ -108,7 +115,7 @@
         class="mb-5"
         cols="12"
       >
-        <v-card>
+        <v-card elevation="0">
           <v-card-title class="headline font-weight-bold">
             By Industry
             <v-spacer/>
