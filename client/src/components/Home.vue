@@ -1,7 +1,7 @@
 <template>
   <v-row
     justify="center"
-    align="center"
+    align="start"
     no-gutters
   >
     <!-- Banner -->
@@ -10,7 +10,7 @@
       lg="6"
     >
       <v-img 
-        src="../assets/stocks-banner.jpg" 
+        src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
         class="fill-height"
       />
     </v-col>
@@ -20,6 +20,7 @@
       cols="12"
       lg="6"
       md="9"
+      class="pt-4"
     >
       <!-- Header -->
       <v-col cols="12">
