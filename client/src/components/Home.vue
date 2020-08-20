@@ -43,7 +43,7 @@
         class="mb-5"
         cols="12"
       >
-        <v-card elevation="0">
+        <v-card>
           <v-card-title class="headline font-weight-bold">
             Overall
           </v-card-title>
@@ -114,7 +114,7 @@
         class="mb-5"
         cols="12"
       >
-        <v-card elevation="0">
+        <v-card>
           <v-card-title class="headline font-weight-bold">
             By Industry
             <v-spacer/>
